@@ -1,0 +1,264 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	overflow-x: hidden;
+	font-family: "Montserrat", sans-serif;
+	font-size: 16px;
+	line-height: 1;
+}
+img {
+	display: block;
+	max-width: 100%;
+}
+a {
+	text-decoration: none;
+}
+.wrapper {
+	max-width: 1440px;
+	margin: 0 auto;
+}
+.container {
+	max-width: 1170px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+.button {
+	display: inline-block;
+	font-size: 16px;
+	color: #272e35;
+	padding: 20px 45px;
+	border-radius: 30px;
+	outline: none;
+	cursor: pointer;
+	background-color: transparent;
+	line-height: normal;
+}
+.button--primary {
+	color: white;
+	background-color: #579aff;
+}
+.button--outline {
+	border: 1px solid #a5b2c3;
+}
+.header {
+	padding-top: 43px;
+	display: flex;
+	align-items: center;
+}
+.header-logo {
+	display: block;
+	margin-right: 180px;
+}
+.header-auth {
+	margin-left: auto;
+}
+.header-menu {
+	display: flex;
+	align-items: center;
+	list-style: none;
+}
+.header-menu-item {
+	&:not(:first-child) {
+		margin-left: 75px;
+	}
+}
+.header-menu-link {
+	color: #272e35;
+	transition: color 0.2s ease-in-out;
+	&:hover {
+		color: #579aff;
+	}
+}
+
+
+.banner{
+  display: flex;
+  align-items: center;
+  &-info {
+    width:35%;
+    padding-top: 50px;
+
+  }
+  &-image{
+      width: 65%;
+      transform: translateX(50px);
+  }
+  &-heading{
+    font-size: 55px;
+    line-height: 1.4;
+    margin-bottom: 40px;
+  }
+  &-heading span{
+    display: block;
+  }
+  &-desc{
+    font-weight: 300;
+    line-height: 1.5;
+    color:#272e35;
+    margin-bottom: 50px;
+  }
+  &-links{
+    .button:first-child{
+      margin-right: 40px;
+      padding-left: 25px;
+      padding-right: 25px;
+
+    }
+  }
+}
+.work{
+	padding-top: 145px;
+	padding-bottom: 50px;
+}
+.block{
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content:center;
+	flex-direction:column;
+	&-caption {
+		text-transform: uppercase;
+		margin-bottom: 40px;
+		position: relative;
+		display: inline-block;
+	}
+}
+// new nav bar
+// MQ trigger
+@mixin small {
+	@media only screen and (max-width: 766px) {
+	  @content;
+	}
+  }
+  
+  // colores
+  $color: #8f8f8f;
+  $color2: #e8f380;
+  
+  // Navigation
+  .main_h {
+	position: fixed;
+	max-height: 70px;
+	z-index: 999;
+	width: 100%;
+	padding-top: 17px;
+	background: none;
+	overflow: hidden;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	opacity: 0;
+	top: -100px;
+	padding-bottom: 6px;
+	font-family: "Montserrat", sans-serif;
+	@include small {
+		padding-top: 25px;
+	}
+  }
+  
+  .open-nav {
+	max-height: 400px !important;
+	.mobile-toggle {
+	  transform: rotate(-90deg);
+	  -webkit-transform: rotate(-90deg);
+	}
+  }
+  
+  .sticky {
+	background-color: #fff;
+	opacity: 1;
+	top: 0px;
+	border-bottom: 1px solid lighten($color, 30%);
+  }
+  
+  .logo {
+	width: 50px;
+	font-size: 25px;
+	color: $color;
+	text-transform: uppercase;
+	float: left;
+	display: block;
+	margin-top: 0;
+	line-height: 1;
+	margin-bottom: 10px;
+	@include small {
+	  float: none;
+	}
+  }
+  
+  nav {
+	float: right;
+	width: 60%;
+	@include small {
+	  width: 100%;
+	}
+  
+	ul {
+	  list-style: none;
+	  overflow: hidden;
+	  text-align: right;
+	  float: right;
+	  @include small {
+		padding-top: 10px;
+		margin-bottom: 22px;
+		float: left;
+		text-align: center;
+		width: 100%;
+	  }
+  
+	  li {
+		display: inline-block;
+		margin-left: 35px;
+		line-height: 1.5;
+		@include small {
+		  width: 100%;
+		  padding: 7px 0;
+		  margin: 0;
+		}
+	  }
+	  a {
+		color: #888888;
+		text-transform: uppercase;
+		font-size: 12px;
+	  }
+	}
+  }
+  
+  .mobile-toggle {
+	display: none;
+	cursor: pointer;
+	font-size: 20px;
+	position: absolute;
+	right: 22px;
+	top: 0;
+	width: 30px;
+	-webkit-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+	@include small {
+	  display: block;
+	}
+  
+	span {
+	  width: 30px;
+	  height: 4px;
+	  margin-bottom: 6px;
+	  border-radius: 1000px;
+	  background: $color;
+	  display: block;
+	}
+  }
+  
+  .row {
+	width: 100%;
+	max-width: 940px;
+	margin: 0 auto;
+	position: relative;
+	padding: 0 2%;
+  }
+
+
+
+
